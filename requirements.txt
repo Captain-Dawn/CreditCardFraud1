@@ -8,7 +8,6 @@ database_connect
 pymongo
 imblearn
 xgboost
-jupyter
-notebook
+
 
 #-e .
