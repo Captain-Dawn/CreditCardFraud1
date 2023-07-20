@@ -9,4 +9,7 @@ pymongo
 imblearn
 xgboost
 python-dotenv
+python-box
+PyYAML
+ensure
 #-e .
