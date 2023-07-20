@@ -27,7 +27,8 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "research/trials.ipynb",
-    "research/data/data.csv"
+    "research/data/data.csv",
+    ".env"
 ]
 
 for filepath in list_of_files:

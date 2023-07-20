@@ -8,5 +8,5 @@ database_connect
 pymongo
 imblearn
 xgboost
-
+python-dotenv
 #-e .
