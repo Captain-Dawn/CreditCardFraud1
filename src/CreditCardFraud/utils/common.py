@@ -5,6 +5,8 @@ from CreditCardFraud.logging import logger
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
+from database_connect import mongo_operation as mongo
+import pandas as pd
 
 
 @ensure_annotations
@@ -57,3 +59,28 @@ def get_size(path:Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~{size_in_kb} KB"
+
+
+@ensure_annotations
+def upload_files_to_mongodb(mongo_client_con_string:str,collection_name:str,filepath:str,database_name="demoDB"):
+    """takes the path of a csv file , reads the data ,
+    generates a dataframe and dumps in the mongo database with
+    the desired collection name and default database name=demoDB
+
+    Args:
+        mongo_client_con_string (str): client connection string
+        collection_name (str): collection name
+        filepath (str): path to the csv file
+        database_name (str, optional): name of the database. Defaults to "demoDB".
+    """
+    mongo_connection = mongo(
+        client_url = mongo_client_con_string,
+        database_name= database_name,
+        collection_name= collection_name,
+    )
+
+
+    mongo_connection.bulk_insert(filepath)
+    
+    logger.info(f"{collection_name} dataset is uploaded to mongodb")
+    print(f"{collection_name} dataset is uploaded to mongodb")
