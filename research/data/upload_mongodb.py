@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from CreditCardFraud.utils.common import upload_files_to_mongodb
 from pathlib import Path
-import pandas as pd
 
 load_dotenv()
 
