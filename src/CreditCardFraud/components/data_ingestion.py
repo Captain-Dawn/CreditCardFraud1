@@ -27,7 +27,8 @@ class DataIngestion:
 
 
             mongo_docs = list(mycol.find())
-            pd.DataFrame(mongo_docs).iloc[:,1:].to_csv(filename,index=False)
+            data = pd.DataFrame(mongo_docs)
+            data.sort_values('_id').reset_index(drop=True).iloc[:,1:].to_csv(filename,index=False)
             logger.info(f"{filename} downloaded!")
         else:
             logger.info(f"file already exists of size: {get_size(Path(self.config.local_data_file))}")
