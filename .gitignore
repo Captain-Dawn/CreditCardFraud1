@@ -162,3 +162,4 @@ cython_debug/
 tj_mongo.py
 rough_code.py
 creditcard.csv
+artifacts/*
