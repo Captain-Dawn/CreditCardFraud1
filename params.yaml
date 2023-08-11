@@ -1,4 +1,4 @@
 RandomForestClassifier:
   'criterion': 'gini'
   'max_features': 'log2'
-  'n_estimators': 60
+  'n_estimators': 200
