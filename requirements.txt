@@ -13,5 +13,4 @@ python-box
 PyYAML
 ensure
 joblib
-notebook
 -e .
