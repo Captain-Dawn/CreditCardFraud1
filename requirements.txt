@@ -1,6 +1,6 @@
 pandas
 numpy
-flask
+Flask
 ipykernel
 seaborn
 scikit-learn==1.2.2
@@ -13,4 +13,5 @@ python-box
 PyYAML
 ensure
 joblib
+notebook
 -e .
