@@ -1,6 +1,7 @@
 pandas
 numpy
 Flask
+Flask-Cors
 ipykernel
 seaborn
 scikit-learn==1.2.2
@@ -14,4 +15,5 @@ PyYAML
 ensure
 joblib
 notebook
+mlflow
 -e .

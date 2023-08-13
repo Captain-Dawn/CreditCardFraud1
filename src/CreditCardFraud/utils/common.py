@@ -8,6 +8,7 @@ from pathlib import Path
 from database_connect import mongo_operation as mongo
 import pandas as pd
 import joblib
+import json
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -59,6 +60,38 @@ def get_size(path:Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~{size_in_kb} KB"
+
+
+@ensure_annotations
+def save_json(path:Path,data:dict):
+    """save json data
+
+    Args:
+        path (Path): path to json file
+        data (dict): data to be saved in json file
+
+    """
+    with open(path, 'w') as f:
+        json.dump(data, f,indent=4)
+    logger.info("json file saved at:{path}")
+
+
+@ensure_annotations
+def load_json(path:Path)->ConfigBox:
+    """load json file data
+
+
+    Args:
+        path (Path): path to json file
+
+    Returns:
+        ConfigBox: data as class attributes instead of dictionary
+    """
+    with open(path) as f:
+        content = json.load(f)
+    logger.info("json file loaded successfully from : {path}")
+    return ConfigBox(content)
+
 
 
 @ensure_annotations
