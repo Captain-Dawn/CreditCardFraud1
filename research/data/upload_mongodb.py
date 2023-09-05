@@ -6,11 +6,8 @@ from pathlib import Path
 load_dotenv()
 
 mongo_client_url = os.getenv('pymongo_url')
-filepath = str(Path(os.path.join('research\data','data.csv')))
+print(mongo_client_url)
+filepath = str(Path(os.path.join('research\data', 'UCI_Credit_Card.csv')))
 
-if __name__ == '__main__':    
-    upload_files_to_mongodb(mongo_client_url,'CreditCardFraud',filepath)
-
-
-
-
+if __name__ == '__main__':
+    upload_files_to_mongodb(mongo_client_url, 'CreditCardFraud', filepath)
