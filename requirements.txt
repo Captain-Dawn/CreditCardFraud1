@@ -14,6 +14,5 @@ python-box
 PyYAML
 ensure
 joblib
-notebook
 mlflow
 -e .
