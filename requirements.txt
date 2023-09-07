@@ -15,4 +15,5 @@ PyYAML
 ensure
 joblib
 mlflow
+notebook
 -e .
