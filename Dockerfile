@@ -9,6 +9,8 @@ RUN pip install -r requirements.txt
 # ARG pymongourl
 # ENV pymongourl=$pymongourl
 
+EXPOSE 5000
+
 RUN python main.py
 
 CMD ["python3", "app.py"]
